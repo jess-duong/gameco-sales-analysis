@@ -5,7 +5,7 @@
 [![View Presentation](https://img.shields.io/badge/View-Presentation-blue)](Presentation/)
 [![View Data Dictionary](https://img.shields.io/badge/View-Data_Dictionary-green)](Data/)
 
-## 📊 Project Overview
+## Project Overview
 
 GameCo, a video game company, needed data-driven guidance for allocating development budgets across different markets and genres. This analysis examined 16,598 video game titles spanning 1980-2016 to identify regional market patterns, genre preferences, and competitive positioning.
 
@@ -20,7 +20,7 @@ GameCo, a video game company, needed data-driven guidance for allocating develop
 - **Genre preferences vary significantly by region**: Western markets favor Action/Shooter titles while Japan shows strong RPG preference
 - **Top 5 franchises demonstrate regional specialization**: FIFA dominates Europe (61% share), Call of Duty leads North America (52%), Pokémon over-indexes in Japan (31%)
 
-## 🛠️ Tools & Techniques
+## Tools & Techniques
 
 **Tools**: Excel, Pivot Tables, Statistical Analysis  
 **Skills**: Descriptive statistics, data cleaning, market segmentation, data visualization, stakeholder presentation
@@ -32,7 +32,7 @@ GameCo, a video game company, needed data-driven guidance for allocating develop
 - Built pivot tables to aggregate sales by region, genre, platform, and publisher
 - Designed comparative visualizations to identify market patterns
 
-## 📁 Repository Contents
+## Repository Contents
 ```
 ├── Data/                       # Data dictionary and appendix
 ├── Visualizations/             # Excel charts and graphs  
@@ -58,7 +58,7 @@ GameCo, a video game company, needed data-driven guidance for allocating develop
 - Track emerging markets for early growth signals
 - Adjust inventory and localization timelines based on regional sales patterns
 
-## 📈 Data Scope & Limitations
+## Data Scope & Limitations
 
 **Dataset**: VGChartz Video Game Sales  
 **Records**: 16,598 games  
@@ -72,13 +72,13 @@ GameCo, a video game company, needed data-driven guidance for allocating develop
 - **Publisher naming variations**: Required consolidation (e.g., "Sony Computer Entertainment" vs "Sony")
 - **Franchise identification**: Pattern matching may not capture all related titles
 
-## 📚 Documentation
+## Documentation
 
 - **[Data Dictionary](Data/)**: Variable definitions, calculated fields, and data quality notes
 - **[Data Appendix](Data/)**: Complete regional breakdowns, genre analysis, and franchise performance tables
 - **[Stakeholder Presentation](Presentation/)**: Executive summary with visualizations and strategic recommendations
 
-## 🔍 Project Context
+## Project Context
 
 This project was completed as part of CareerFoundry's Data Analytics program, demonstrating proficiency in Excel-based analysis, market research, and business intelligence reporting. The analysis emphasizes translating data patterns into actionable business strategy for stakeholder decision-making.
 
