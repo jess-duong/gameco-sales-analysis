@@ -1,0 +1,143 @@
+# GameCo Analysis Methodology
+
+## Overview
+This document describes the Excel-based analytical approach, formulas, and techniques used in the GameCo Video Game Sales analysis.
+
+## Data Preparation
+
+### Data Cleaning Steps
+1. **Missing Values**: Applied mean imputation for regional sales columns to preserve dataset integrity
+2. **Duplicate Removal**: Eliminated duplicate game entries and blank records
+3. **Text Standardization**: Corrected special character encoding issues in game titles (e.g., Pokémon)
+4. **Data Type Validation**: Ensured proper numeric formatting for sales values (rounded to 2 decimals)
+5. **Publisher Consolidation**: Standardized publisher names to address variations (e.g., "Sony Computer Entertainment" → "Sony")
+
+### Data Structure
+- **Source**: VGChartz video game sales dataset
+- **Format**: CSV imported into Excel
+- **Records**: 16,598 video games (1980-2016)
+- **Columns**: Name, Platform, Year, Genre, Publisher, NA_Sales, EU_Sales, JP_Sales, Other_Sales, Global_Sales
+
+## Calculated Fields & Formulas
+
+### Regional Market Share Percentage
+```excel
+=(Region_Sales / Global_Sales) * 100
+```
+**Purpose**: Calculate what percentage of total sales each region represents  
+**Example**: `=(NA_Sales / Global_Sales) * 100` for North America's share
+
+### Year-Over-Year Market Share Trends
+```excel
+=SUMIF(Year_Column, Year_Value, Region_Sales) / SUMIF(Year_Column, Year_Value, Global_Sales) * 100
+```
+**Purpose**: Track how each region's share of the market changes annually  
+**Applied**: Used to identify Europe's rising market share trend (2000-2016)
+
+### Publisher Total Sales
+```excel
+=SUMIF(Publisher_Column, Publisher_Name, Global_Sales)
+```
+**Purpose**: Aggregate all sales for a given publisher  
+**Example**: `=SUMIF(C:C, "Nintendo", J:J)` to calculate Nintendo's total sales
+
+### Franchise Sales Grouping
+```excel
+=SUMIF(Name_Column, "*Mario*", Global_Sales)
+```
+**Purpose**: Group sales by franchise using wildcard pattern matching  
+**Example**: `=SUMIF(B:B, "*Mario*", J:J)` captures Super Mario Bros, Mario Kart, etc.  
+**Note**: This method may not capture all franchise titles with non-standard naming
+
+## Analytical Techniques
+
+### Descriptive Statistics
+- **Mean, Median, Mode**: Calculated for Global_Sales to understand distribution
+- **Min/Max Values**: Identified top-performing games and publishers
+- **Standard Deviation**: Assessed sales variability across genres and regions
+
+### Pivot Table Analysis
+
+#### Regional Sales by Genre
+**Rows**: Genre  
+**Columns**: Region (NA_Sales, EU_Sales, JP_Sales)  
+**Values**: SUM of sales  
+**Purpose**: Identify genre preferences by market
+
+#### Top Publishers by Total Sales
+**Rows**: Publisher  
+**Values**: SUM of Global_Sales  
+**Sort**: Descending by sales  
+**Filter**: Top 10 publishers  
+**Purpose**: Competitive landscape analysis
+
+#### Annual Sales Trends by Region
+**Rows**: Year  
+**Columns**: Region  
+**Values**: SUM of regional sales  
+**Purpose**: Track market share evolution over time
+
+### Trend Analysis
+
+#### Market Share Evolution (2000-2016)
+- Created line chart with Year on X-axis
+- Plotted NA%, EU%, and Japan% market share
+- Identified crossover point where Europe surpassed North America
+
+#### Genre Performance Comparison
+- Stacked bar chart showing regional composition by genre
+- Calculated percentage of genre sales from each region
+- Highlighted genres with extreme regional skew (e.g., Shooters 56% NA, RPGs 38% Japan)
+
+## Visualization Approach
+
+### Chart Types Used
+1. **Stacked Bar Charts**: Genre preferences by region (percentage composition)
+2. **Line Charts**: Year-over-year market share trends
+3. **Horizontal Bar Charts**: Top publishers, franchises, and competitors
+4. **Time Series**: Franchise performance tracking (2003-2016)
+
+### Design Principles
+- Consistent color coding: Blue (NA), Orange (EU), Green (Japan), Gray (Other)
+- Data labels included for key insights (percentages, totals)
+- Titles describe the insight, not just the data shown
+- Annotations highlight critical findings (e.g., "Europe Surpassed NA in 2016")
+
+## Data Quality Considerations
+
+### Known Limitations Addressed
+1. **2016 Incomplete Data**: Excluded from year-over-year percentage comparisons; flagged in presentation
+2. **Character Encoding Issues**: Manually corrected game titles with special characters
+3. **Franchise Identification Accuracy**: Wildcard matching validated against top franchise lists
+4. **Sales Unit Clarity**: Confirmed all values represent millions of units sold, not revenue
+
+### Validation Steps
+- Cross-checked publisher totals against individual game sums
+- Verified regional sales sum to global sales for each record
+- Confirmed genre categories are mutually exclusive (no double-counting)
+- Validated year-over-year trend calculations using manual spot checks
+
+## Tools Used
+
+- **Microsoft Excel**: Primary analysis platform
+- **Pivot Tables**: Data aggregation and cross-tabulation
+- **Excel Charts**: All visualizations
+- **Conditional Formatting**: Data validation and outlier identification
+- **SUMIF/SUMIFS**: Calculated fields and aggregations
+- **Text Functions**: Publisher name standardization
+
+## Reproducibility Notes
+
+To replicate this analysis:
+1. Import `vgsales_clean.csv` into Excel
+2. Apply data cleaning steps outlined above
+3. Create calculated columns for regional percentages
+4. Build pivot tables as specified in "Pivot Table Analysis" section
+5. Generate charts using specified configurations
+6. Validate totals and percentages against provided data dictionary
+
+---
+
+**Analysis completed**: January 2026  
+**Analyst**: Jessica Duong  
+**Tool**: Microsoft Excel 
