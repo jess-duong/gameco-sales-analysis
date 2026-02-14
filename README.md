@@ -2,10 +2,9 @@
 
 **Regional market analysis of 16,598 video game titles (1980-2016) to guide development budget allocation across global markets.**
 
-[![View Presentation](https://img.shields.io/badge/Excel-Presentation-2B5329?style=flat-square&logo=microsoftpowerpoint&logoColor=white)](Presentation/)
-[![View Data Dictionary](https://img.shields.io/badge/Docs-Data_Dictionary-6AAB73?style=flat-square&logo=readthedocs&logoColor=white)](Data/)
-[![View Appendix](https://img.shields.io/badge/Docs-Appendix-C4A84D?style=flat-square&logo=readthedocs&logoColor=white)](Data/)
-
+[![View Presentation](https://img.shields.io/badge/Excel-Presentation-2B5329?style=flat-square&logo=microsoftpowerpoint&logoColor=white)](Presentation/GameCo_Sales_Analysis_Jessica_Duong.pdf)
+[![View Data Dictionary](https://img.shields.io/badge/Docs-Data_Dictionary-6AAB73?style=flat-square&logo=readthedocs&logoColor=white)](Data/GameCo_Data_Dictionary.pdf)
+[![View Appendix](https://img.shields.io/badge/Docs-Appendix-C4A84D?style=flat-square&logo=readthedocs&logoColor=white)](Data/GameCo_Appendix_Final.pdf)
 ---
 
 ## Project Background
